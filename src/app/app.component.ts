@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {CalendarView} from "angular-calendar";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calendar';
+  viewDate: Date = new Date();
+  view: CalendarView = CalendarView.Month;
 }

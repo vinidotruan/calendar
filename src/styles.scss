@@ -1,6 +1,6 @@
 
 body {
-  background-color: white;
+  background-color: #151d31;
 }
 
 @import "variables.scss";
@@ -13,6 +13,18 @@ body {
   border-radius: 1rem;
 }
 
+@mixin btn-outline($color, $shadow-color) {
+  color: $color;
+  background-color: transparent;
+  box-shadow: 4px 4px 1px $shadow-color;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: 1px solid $color;
+}
+
+.btn-outline-purple {
+  @include btn-outline($light-purple, $purple);
+}
 
 .btn-purple {
   @include btn(white, $light-purple, $purple);

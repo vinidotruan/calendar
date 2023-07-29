@@ -4,32 +4,54 @@
   display: grid;
   grid-template-columns: repeat(7, 50px);
   grid-template-rows: 40px repeat(6, 50px);
-  gap: 5px;
+  gap: 15px;
   width: auto;
   max-width: 600px;
   color: white;
   margin-top: 1rem;
+
+
+  .calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  .calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &.outline {
+      color: $light-purple;
+      background-color: transparent;
+      box-shadow: 4px 4px 1px $purple;
+      font-weight: bold;
+      border-radius: 1rem;
+      border: 1px solid $light-purple;
+    }
+
+    &.active {
+
+      background-color: $light-purple;
+      box-shadow: 3px 3px 1px $purple;
+    }
+
+    &:hover {
+      background-color: $purple;
+      box-shadow: 3px 3px 1px $light-purple;
+      color: white;
+    }
+  }
+
 }
 
-.calendar-header,
-.calendar-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  background-color: $light-purple;
-  box-shadow: 3px 3px 1px $purple;
-  border-radius: 1rem;
-}
-
-.calendar-day {
-  cursor: pointer;
-}
-
-.calendar-day:hover {
-  background-color: $purple;
-  box-shadow: 3px 3px 1px $light-purple;
-}
 
 .btn-purple {
   height: 40px;

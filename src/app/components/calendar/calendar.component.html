@@ -19,8 +19,9 @@
   <div class="calendar-header">S</div>
   <div class="calendar-header">S</div>
 
-  <ng-container *ngFor="let day of getCalendar(year,month)">
-    <div class="calendar-day">
+  <ng-container *ngFor="let day of calendar">
+    <div class="calendar-day" [ngClass]="{'outline': !day.selected, 'active': day.selected}"
+         (click)="selectDay(day.day)">
       {{ day.day ? day.day : '' }}
     </div>
   </ng-container>

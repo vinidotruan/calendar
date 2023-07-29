@@ -8,9 +8,14 @@ import * as calendar from '../../../assets/jsons/calendar.json';
 })
 export class CalendarComponent {
   year: number = 2023;
-  month: number = 1;
+  month: number = 7;
+  calendar: CalendarEntry[] = [];
 
-  getCalendar(year: number, month: number): CalendarEntry[] {
+  constructor() {
+    this.getCalendar(this.year, this.month);
+  }
+
+  getCalendar(year: number, month: number): void {
     const firstDayOfMonth = new Date(year, month - 1, 1);
     const startingDayOfWeek = firstDayOfMonth.getDay();
     const daysInMonth = new Date(year, month, 0).getDate();
@@ -21,7 +26,7 @@ export class CalendarComponent {
       const date = new Date(year, month - 1, day);
       const dayOfWeek = date.getDay();
 
-      calendar.push({ day, dayOfWeek });
+      calendar.push({ day, dayOfWeek, selected: false });
     }
 
     // Add empty days to the beginning of the calendar to align the starting day
@@ -29,23 +34,30 @@ export class CalendarComponent {
       calendar.unshift({ day: 0, dayOfWeek: i });
     }
 
-    return calendar;
+    this.calendar = calendar;
   }
 
   setYear(year: number) {
     this.year = year;
+    this.getCalendar(this.year, this.month);
   }
 
   setMonth(month: number) {
     this.month = month;
+    this.getCalendar(this.year, this.month);
+  }
+
+  selectDay(day: number) {
+    this.calendar.map((calendarDay) => {
+      if (calendarDay.day === day) {
+        calendarDay.selected = !calendarDay.selected;
+      }
+    });
   }
 }
 
 interface CalendarEntry {
   day: number;
   dayOfWeek: number;
-}
-
-interface Calendar {
-  [month: number]: CalendarEntry[];
+  selected?: boolean;
 }

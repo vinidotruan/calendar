@@ -7,11 +7,8 @@ import * as calendar from '../../../assets/jsons/calendar.json';
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent {
-  getCalendar2(month: number): any {
-    const calendarOfYear = calendar as { [year: number]: Calendar };
-    const cal = calendarOfYear['2023'][month];
-    return calendarOfYear['2023'][month];
-  }
+  year: number = 2023;
+  month: number = 1;
 
   getCalendar(year: number, month: number): CalendarEntry[] {
     const firstDayOfMonth = new Date(year, month - 1, 1);
@@ -33,6 +30,14 @@ export class CalendarComponent {
     }
 
     return calendar;
+  }
+
+  setYear(year: number) {
+    this.year = year;
+  }
+
+  setMonth(month: number) {
+    this.month = month;
   }
 }
 

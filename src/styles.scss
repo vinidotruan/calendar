@@ -1,6 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
-@import "variables.scss";
 
 body {
   background-color: white;
 }
+
+@import "variables.scss";
+
+@mixin btn($color, $bg, $shadow-color) {
+  color: $color;
+  background-color: $bg;
+  box-shadow: 4px 4px 1px $shadow-color;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+
+.btn-purple {
+  @include btn(white, $light-purple, $purple);
+}
+
+.btn-green {
+  @include btn(white, $light-green, $green);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+}
+
+.badge {
+  text-align: center;
+  border-radius: 2rem;
+
+  &.badge-purple {
+    background-color: $light-purple;
+    color: white;
+    font-weight: bold;
+    box-shadow: 4px 4px 1px $purple;
+    min-width: 150px;
+  }
+}
+

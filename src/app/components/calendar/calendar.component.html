@@ -1,17 +1,27 @@
+<div class="calendar-options">
+  <div class="calendar-options-year mt-3 d-flex justify-content-between">
+    <button (click)="setYear(year - 1)" class="btn btn-purple">-</button>
+    <span class="badge badge-purple d-flex justify-content-center align-items-center">{{ year }}</span>
+    <button (click)="setYear(year + 1)" class="btn btn-purple">+</button>
+  </div>
+  <div class="calendar-options-month mt-3 d-flex justify-content-between">
+    <button (click)="setMonth(month - 1)" class="btn btn-purple">-</button>
+    <span class="badge badge-purple d-flex justify-content-center align-items-center">{{ month }}</span>
+    <button (click)="setMonth(month + 1)" class="btn btn-purple">+</button>
+  </div>
+</div>
 <div class="calendar">
-  <div class="calendar-header">Dom</div>
-  <div class="calendar-header">Seg</div>
-  <div class="calendar-header">Ter</div>
-  <div class="calendar-header">Qua</div>
-  <div class="calendar-header">Qui</div>
-  <div class="calendar-header">Sex</div>
-  <div class="calendar-header">Sab</div>
+  <div class="calendar-header">D</div>
+  <div class="calendar-header">S</div>
+  <div class="calendar-header">T</div>
+  <div class="calendar-header">Q</div>
+  <div class="calendar-header">Q</div>
+  <div class="calendar-header">S</div>
+  <div class="calendar-header">S</div>
 
-
-  <ng-container *ngFor="let day of getCalendar(2023,7)">
+  <ng-container *ngFor="let day of getCalendar(year,month)">
     <div class="calendar-day">
       {{ day.day ? day.day : '' }}
     </div>
   </ng-container>
-
 </div>

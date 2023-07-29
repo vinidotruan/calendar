@@ -8,7 +8,6 @@ import * as calendar from '../assets/jsons/calendar.json';
 })
 export class AppComponent {
   title = 'calendar';
-  viewDate: Date = new Date();
 
   constructor() {}
 }

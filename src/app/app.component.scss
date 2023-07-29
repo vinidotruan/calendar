@@ -1,0 +1,13 @@
+@import "variables";
+
+.btn-purple {
+  background-color: $light-purple;
+  color: white;
+  font-weight: bold;;
+  box-shadow: 4px 4px 1px $purple;
+}
+
+.btn {
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+}

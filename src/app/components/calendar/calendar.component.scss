@@ -1,0 +1,32 @@
+@import "variables.scss";
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows: 40px repeat(6, 50px);
+  gap: 5px;
+  width: auto;
+  max-width: 600px;
+  color: white;
+  margin-top: 1rem;
+}
+
+.calendar-header,
+.calendar-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: $light-purple;
+  box-shadow: 3px 3px 1px $purple;
+  border-radius: 1rem;
+}
+
+.calendar-day {
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  background-color: $purple;
+  box-shadow: 3px 3px 1px $light-purple;
+}

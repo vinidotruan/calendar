@@ -10,6 +10,6 @@ export class ModalService {
   constructor(private modalService: BsModalService) {}
 
   open(template: any) {
-    this.modal = this.modalService.show(template);
+    this.modal = this.modalService.show(template, { class: 'modal-lg' });
   }
 }

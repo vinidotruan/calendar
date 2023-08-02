@@ -1,5 +1,13 @@
 @import "variables.scss";
 
-.container {
-  background-color: $purple;
+.row {
+  background-color: $background-color;
+  border: 10px solid $purple;
+  padding: 10px;
+  color: white;
+  min-height: 300px;
+
+  img {
+    width: 50px;
+  }
 }

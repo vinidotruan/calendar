@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as calendar from '../../../assets/jsons/calendar.json';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-calendar',
@@ -11,7 +11,7 @@ export class CalendarComponent {
   month: number = 7;
   calendar: CalendarEntry[] = [];
 
-  constructor() {
+  constructor(private modalService: ModalService) {
     this.getCalendar(this.year, this.month);
   }
 

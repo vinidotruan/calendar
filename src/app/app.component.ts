@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import * as calendar from '../assets/jsons/calendar.json';
+import { CheckableComponent } from './components/modals/checkable/checkable.component';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,11 @@ import * as calendar from '../assets/jsons/calendar.json';
 export class AppComponent {
   title = 'calendar';
 
-  constructor() {}
+  constructor(private modalService: ModalService) {
+    this.openModal();
+  }
+
+  openModal() {
+    this.modalService.open(CheckableComponent);
+  }
 }

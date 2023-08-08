@@ -1,7 +1,7 @@
 <div class="row d-flex justify-content-around align-items-center ">
   <div class="col-4 "
        *ngFor="let item of goals$ | async">
-    <div class="purple-box d-flex justify-content-center align-items-center flex-column">
+    <div class="purple-box d-flex justify-content-center align-items-center flex-column" (click)="selectGoal(item)">
       <img src="assets/icons/{{item.slug}}.png" alt="" srcset="">
       <h3>{{item.name}}</h3>
     </div>

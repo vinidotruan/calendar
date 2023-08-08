@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { GoalsService } from '../../../services/goals.service';
+import { Component, EventEmitter } from '@angular/core';
+import { GoalsService } from '@services/goals.service';
+import { Goal } from '@interfaces/goal';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-checkable',
@@ -7,9 +9,15 @@ import { GoalsService } from '../../../services/goals.service';
   styleUrls: ['./checkable.component.scss'],
 })
 export class CheckableComponent {
-  goals$!: any;
+  goals$!: Observable<Goal[]>;
+
+  selectedGoal: EventEmitter<Goal> = new EventEmitter<Goal>();
 
   constructor(private goalsService: GoalsService) {
     this.goals$ = this.goalsService.getGoals();
+  }
+
+  public selectGoal(goal: Goal): void {
+    this.selectedGoal.emit(goal);
   }
 }

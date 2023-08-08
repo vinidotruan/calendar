@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(7, 50px);
   grid-template-rows: 40px repeat(6, 50px);
-  gap: 15px;
+  gap: .4rem;
   width: auto;
   max-width: 600px;
   color: white;

@@ -1,5 +1,5 @@
-import { Injectable, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import {Injectable} from '@angular/core';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +7,18 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class ModalService {
   public modal?: BsModalRef;
 
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService) {
+  }
 
-  open(template: any) {
-    this.modal = this.modalService.show(template, { class: 'modal-lg' });
+  open(template: any): BsModalRef<any> {
+    this.modal = this.modalService.show(template, {
+      class: 'modal-lg',
+      backdrop: 'static',
+    });
+    return this.modal;
+  }
+
+  close(): void {
+    this.modal?.hide();
   }
 }

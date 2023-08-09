@@ -13,6 +13,8 @@ export class AppComponent {
   constructor(private modalService: ModalService) {}
 
   openModal() {
-    this.modalService.open(CheckableComponent);
+    this.modalService
+      .open(CheckableComponent)
+      .onHide?.subscribe((response) => console.log(response));
   }
 }

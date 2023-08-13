@@ -67,6 +67,11 @@ body {
     border: 5px solid $light-purple;
   }
 
+  &.active {
+    background-color: $purple;
+    border: 5px solid $light-purple;
+  }
+
   img {
     width: 50px;
   }

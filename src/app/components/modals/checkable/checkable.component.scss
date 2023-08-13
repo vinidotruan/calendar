@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-.row {
+.container {
   background-color: $background-color;
   border: 10px solid $purple;
   padding: 10px;
@@ -9,5 +9,13 @@
 
   img {
     width: 50px;
+  }
+
+  .item {
+    cursor: pointer;
+
+    &.active {
+
+    }
   }
 }

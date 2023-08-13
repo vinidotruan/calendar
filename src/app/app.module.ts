@@ -12,6 +12,7 @@ import {environment} from '../environments/environment';
 import {provideDatabase, getDatabase} from '@angular/fire/database';
 import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
+import {getAuth, provideAuth} from "@angular/fire/auth";
 
 @NgModule({
   declarations: [AppComponent, CalendarComponent, CheckableComponent],
@@ -23,6 +24,7 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
   providers: [
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase}

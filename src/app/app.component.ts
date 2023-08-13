@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { CheckableComponent } from '@components/modals/checkable/checkable.component';
-import { ModalService } from '@services/modal.service';
+import {Component} from '@angular/core';
+import {CheckableComponent} from '@components/modals/checkable/checkable.component';
+import {ModalService} from '@services/modal.service';
+import {AuthService} from "@services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { ModalService } from '@services/modal.service';
 export class AppComponent {
   title = 'calendar';
 
-  constructor(private modalService: ModalService) {}
+  constructor(private modalService: ModalService, private authService: AuthService) {
+  }
 
   openModal() {
     this.modalService
